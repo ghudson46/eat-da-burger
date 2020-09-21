@@ -8,8 +8,8 @@ const burger = require('../models/burger');
 
 router.get("/", (req, res) => {
   burger.selectAll(data => {
-    const hbsObject = {
-      burgers: data
+    var hbsObject = {
+      burger: data
     };
     console.log(hbsObject);
     res.render("index", hbsObject);
@@ -18,9 +18,9 @@ router.get("/", (req, res) => {
 
 router.post("/api/burgers", (req, res) => {
   burger.insertOne([
-    "burgerName", "isDevoured"
+    "burger_name", "devoured"
   ], [
-    req.body.burgerName, req.body.isDevoured
+    req.body.burger_name, req.body.devoured
   ], result => {
     res.json({ id: result.insertId });
   });
