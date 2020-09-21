@@ -1,7 +1,7 @@
 const connection = require('./connection');
 
 const orm = {
-  selectAll: function() {
+  selectAll: function(cb) {
     var queryString = "SELECT * FROM burgers;";
     var query = connection.query(queryString, (err, result) => {
       if (err) throw err;
@@ -9,7 +9,7 @@ const orm = {
       console.log(result);
     });
   },
-  insertOne: function(burgerName, isDevoured) {
+  insertOne: function(burgerName, isDevoured, cb) {
     var queryString = "INSERT INTO ?? (burger_name, devoured) VALUES (?, ??);";
     var query = connection.query(queryString, [table, burgerName, isDevoured], (err, result) => {
       if (err) throw err;
@@ -17,7 +17,7 @@ const orm = {
       console.log(result);
     });
   },
-  updateOne: function(id) {
+  updateOne: function(id, cb) {
     var queryString = "UPDATE burgers SET devoured = NOT devoured WHERE id = ??;";
     var query = connection.query(queryString, [id], (err, result) => {
       if (err) throw err;
