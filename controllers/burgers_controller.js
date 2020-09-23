@@ -19,7 +19,7 @@ router.get("/", (req, res) => {
 router.post("/burgers/create", (req, res) => {
   console.log('req', req.body);
   burger.insertOne([
-    req.body.burger_name, req.body.devoured === "1" ? true : false
+    req.body.burger_name, req.body.devoured
   ], result => {
     console.log(result);
     res.redirect("/");
