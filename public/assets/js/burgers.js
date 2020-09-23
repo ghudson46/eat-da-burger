@@ -1,7 +1,7 @@
 $(function() {
   $(".change-devoured").on("click", function(event) {
     var id = $(this).data("id");
-    var newDevoured = $(this).data("newDevoured");
+    var newDevoured = $(this).data("devoured");
 
     var newDevouredState = {
       devoured: newDevoured
@@ -42,18 +42,16 @@ $(function() {
   //   );
   // });
 
-  $(".delete-burger").on("click", function(event) {
-    var id = $(this).data("id");
-
-    // Send the DELETE request.
-    $.ajax("/api/burgers/" + id, {
-      type: "DELETE"
-    }).then(
-      function() {
-        console.log("deleted burger", id);
-        // Reload the page to get the updated list
+  $(document).ready(function () {
+    $(".delete-burger").on("click", function (event) {
+      event.preventDefault(); // ← Makes origioonal delete btn stop working
+      var burger_id = $(this).data("id");
+      console.log("Burger Id#: ", burger_id);
+      $.ajax({
+        type: "DELETE",
+        url: "/api/burgers/" + burger_id,
+      }).then(function (data) {
         location.reload();
-      }
-    );
+      });
+    });
   });
-});
