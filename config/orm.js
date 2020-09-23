@@ -19,23 +19,11 @@ const orm = {
       cb(result);
     });
   },
-  updateOne: function(tableName, id, cb) {
-    var queryString = "UPDATE ?? SET devoured = NOT devoured WHERE id = ??;";
-    var query = connection.query(queryString, [tableName, id], (err, result) => {
-      if (err) throw err;
-      console.log(query.sql);
-      console.log(result);
-      cb(result);
-    });
+  updateOne: function() {
+    
   },
-  deleteOne: function(tableName, id, cb) {
-    var queryString = "DELETE FROM ?? WHERE id = ??;";
-    var query = connection.query(queryString, [tableName, id], (err, result) => {
-      if (err) throw err;
-      console.log(query.sql);
-      console.log(result);
-      cb(result);
-    });
+  deleteOne: function() {
+   
   },
 
 };

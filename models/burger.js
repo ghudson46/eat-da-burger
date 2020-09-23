@@ -11,11 +11,12 @@ const burger = {
       cb(res);
     });
   },
-  updateOne: function(id, cb) {
-    orm.updateOne(id, res => {
-      cb(res);
-    });
-  }
+  updateOne: function() {
+   
+  },
+  deleteOne: function () {
+    
+  },
 };
 
 module.exports = burger;

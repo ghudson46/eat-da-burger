@@ -28,36 +28,13 @@ router.post("/burgers/create", (req, res) => {
 
 // update and delete methods are not working
 
-router.put("/burgers/:id", (req, res) => {
-  const condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  burger.updateOne({
-    devoured: req.body.devoured
-  }, condition, result => {
-    if (result.changedRows == 0) {
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
+router.get("/burgers/:id", (req, res) => {
+ 
 });
 
 router.delete("/burgers/:id", (req, res) => {
-  const condition = "id = " + req.params.id;
-
-  console.log("condition", condition);
-
-  burger.deleteOne({
-    devoured: req.body.devoured
-  }, condition, result => {
-    if (result.changedRows == 0) {
-      return res.status(404).end();
-    } else {
-      res.status(200).end();
-    }
-  });
+ 
+     
 });
 
 
