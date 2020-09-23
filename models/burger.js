@@ -11,14 +11,17 @@ const burger = {
       cb(res);
     });
   },
-  updateOne: function() {
-   
+  updateOne: function(objColVals, condition, cb) {
+   orm.updateOne("burgers", objColVals, condition, res => {
+     cb(res);
+   })
   },
-  deleteOne: function () {
-    
+  deleteOne: function (condition, cb) {
+    orm.deleteOne("burgers", condition, res => {
+      cb(res);
+    });
   },
 };
 
 module.exports = burger;
 
-// this is likely where an error would occur. Not 100% sure i am getting burger specific input
