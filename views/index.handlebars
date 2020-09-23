@@ -1,6 +1,9 @@
-<h1>Burgers!</h1>
+<h1 class="text-success">Burgers!</h1>
+<br>
+<br>
 
-<h2>Burgers that have been devoured</h2>
+<h2 class="text-success">Burgers that have been devoured</h2>
+<br>
 
 <ul>
   {{#each burgers}}  
@@ -10,7 +13,8 @@
   {{/each}}
 </ul>
 
-<h2>Burgers that have not been devoured</h2>
+<h2 class="text-success">Burgers that have not been devoured</h2>
+<br>
 
 <ul>
   {{#each burgers}}
@@ -20,7 +24,8 @@
   {{/each}}
 </ul>
 
-<h2>Add a Burger</h2>
+<h2 class="text-success">Add a Burger</h2>
+<br>
 <form class="create-form" action="/burgers/create" method="POST">
 
   <div class="form-group">
@@ -34,5 +39,5 @@
     <input type="radio" name="devoured" value="0"> Not devoured
   </div>
 
-  <button type="submit">Add Burger</button>
+  <button type="submit" class="btn btn-success">Add Burger</button>
 </form>
