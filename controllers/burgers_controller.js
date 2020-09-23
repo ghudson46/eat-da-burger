@@ -9,24 +9,24 @@ const burger = require('../models/burger');
 router.get("/", (req, res) => {
   burger.selectAll(data => {
     var hbsObject = {
-      burger: data
+      burgers: data
     };
-    console.log(hbsObject);
+    console.log("hbsObject:", hbsObject);
     res.render("index", hbsObject);
   });
 });
 
-router.post("/api/burgers", (req, res) => {
+router.post("/burgers/create", (req, res) => {
+  console.log('req', req.body);
   burger.insertOne([
-    "burger_name", "devoured"
-  ], [
-    req.body.burger_name, req.body.devoured
+    req.body.burger_name, req.body.devoured === "1" ? true : false
   ], result => {
-    res.json({ id: result.insertId });
+    console.log(result);
+    res.redirect("/");
   });
 });
 
-router.put("/api/burgers/:id", (req, res) => {
+router.put("/burgers/:id", (req, res) => {
   const condition = "id = " + req.params.id;
 
   console.log("condition", condition);
