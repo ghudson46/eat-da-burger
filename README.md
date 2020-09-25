@@ -31,8 +31,7 @@ Install the following in your command line
 
 ## Instructions
 
--Cannot get it to deploy to heroku
-- [Click Here to Launch Application on Heroku]()
+- [Click Here to Launch Application on Heroku](https://whispering-reaches-03639.herokuapp.com/)
 
 - [YouTube video](https://www.youtube.com/watch?v=TOVXLTZYWSo)
 
