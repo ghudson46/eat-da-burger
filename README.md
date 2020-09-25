@@ -31,7 +31,10 @@ Install the following in your command line
 
 ## Instructions
 
+-Cannot get it to deploy to heroku
 - [Click Here to Launch Application on Heroku]()
+
+- [YouTube video](https://www.youtube.com/watch?v=TOVXLTZYWSo)
 
 ## Features
 
@@ -43,7 +46,7 @@ Install the following in your command line
 
 ## Example Gif
 
-<img src="" width="500" />
+<img src="public/assets/Eat-Da-Burger.gif" width="500" />
 
 ## Repository
 
