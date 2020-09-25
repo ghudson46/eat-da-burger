@@ -46,13 +46,13 @@ router.put("/api/burgers/:id", (req, res) => {
 router.delete("/api/burgers/:id", (req, res) => {
   const condition = "id = " + req.params.id;
 
- burger.deleteOne(condition, result => {
-   if (result.affectedRows == 0) {
-     return res.status(404).end();
-   } else {
-     res.status(200).end();
-   }
- });
+  burger.deleteOne(condition, result => {
+    if (result.affectedRows == 0) {
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
      
 });
 
